@@ -1,0 +1,38 @@
+<form (submit)="onSubmit($event)">
+  <p>
+    Nom :
+    <input
+      type="text"
+      name="name"
+      [value]="user.name"
+      (input)="user.name = $event.target.value"
+    />
+  </p>
+  <p>
+    Email :
+    <input
+      type="email"
+      name="email"
+      [value]="user.email"
+      (input)="user.email = $event.target.value"
+    />
+  </p>
+  <p>
+    Téléphone :
+    <input
+      type="tel"
+      name="phone"
+      [value]="user.phone"
+      (input)="user.phone = $event.target.value"
+    />
+  </p>
+  <p>
+    <button>Enregistrer</button>
+  </p>
+</form>
+<!--
+    const formElt = document.querySelector('form');
+    formElt.addEventListener('submit', (event) => {
+        event.preventDefault();
+    })
+-->

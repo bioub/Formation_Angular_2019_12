@@ -1,0 +1,16 @@
+<app-hello></app-hello>
+
+<app-hello name="Romain"></app-hello>
+<app-hello [name]="prenom"></app-hello>
+<app-hello [name]="prenom | uppercase"></app-hello>
+
+
+<app-counter></app-counter>
+
+
+<app-user-form (save)="user = $event"></app-user-form>
+<app-user-form [user]="{name: 'Romain'}"></app-user-form>
+
+User : {{user.name}}
+
+<app-toggle-list [items]="['A', 'B', 'C']"></app-toggle-list>

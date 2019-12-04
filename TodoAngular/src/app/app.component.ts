@@ -29,4 +29,13 @@ export class AppComponent {
     // Ajout immuable au tableau
     this.todos = [...this.todos, todo];
   }
+
+  ngOnInit() {
+    // Exercice :
+    // - Générer un service TodoService
+    // - Dépendre de HttpClient (pensez à HttpClientModule)
+    // - Au chargement du composant AppComponent
+    // - Envoyer une requete via TodoService pour récupérer la liste
+    // des todos depuis https://jsonplaceholder.typicode.com/todos
+  }
 }

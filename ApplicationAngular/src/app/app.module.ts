@@ -8,6 +8,8 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
+import { UserService } from './users/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,11 @@ import { TopBarComponent } from './core/top-bar/top-bar.component';
     NotFoundComponent,
     TopBarComponent
   ],
+  // providers: [
+  //   UserService
+  // ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     UsersModule,
     SharedModule,

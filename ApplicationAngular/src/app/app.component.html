@@ -1,0 +1,5 @@
+
+<app-clock format="HH:mm:ss" [delay]="delay" *ngIf="show"></app-clock>
+
+<button (click)="show = !show">toggle</button>
+<button (click)="delay = delay + 1000">increment</button>

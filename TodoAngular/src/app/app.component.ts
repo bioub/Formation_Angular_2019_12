@@ -23,6 +23,10 @@ export class AppComponent {
   ];
 
   addTodo(todo) {
-    this.todos.push(todo);
+    // Ajout muable au tableau
+    // this.todos.push(todo);
+
+    // Ajout immuable au tableau
+    this.todos = [...this.todos, todo];
   }
 }

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/">MyApp</a>
+
+  <ul class="navbar-nav mr-auto">
+    <li
+      class="nav-item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a class="nav-link" routerLink="/users">
+        Users
+      </a>
+    </li>
+    <li class="nav-item" routerLinkActive="active">
+      <a class="nav-link" routerLink="/users/add">User add</a>
+    </li>
+  </ul>
+</nav>

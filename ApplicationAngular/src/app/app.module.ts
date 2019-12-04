@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
+import { UsersModule } from './users/users.module';
+import { TopBarComponent } from './core/top-bar/top-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    TopBarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    UsersModule,
     SharedModule,
+    AppRoutingModule, // toujours en dernier (car route not-found)
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Todo } from './todo.model';
+import { TodoService } from './todo.service';
 
 @Component({
   selector: "todo-root",
@@ -22,6 +23,10 @@ export class AppComponent {
     }
   ];
 
+  constructor(private todoService: TodoService) {
+
+  }
+
   addTodo(todo) {
     // Ajout muable au tableau
     // this.todos.push(todo);
@@ -37,5 +42,9 @@ export class AppComponent {
     // - Au chargement du composant AppComponent
     // - Envoyer une requete via TodoService pour récupérer la liste
     // des todos depuis https://jsonplaceholder.typicode.com/todos
+
+    this.todoService.getAll().subscribe((todos) => {
+      this.todos = [...this.todos, ...todos];
+    })
   }
 }

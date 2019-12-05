@@ -3,7 +3,7 @@
     <div class="list-group">
       <a
         class="list-group-item list-group-item-action"
-        *ngFor="let user of users"
+        *ngFor="let user of users$ | async"
         [routerLink]="user.id"
         routerLinkActive="active"
       >

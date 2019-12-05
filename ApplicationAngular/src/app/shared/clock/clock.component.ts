@@ -37,7 +37,7 @@ export class ClockComponent implements OnInit {
       take(10),
     );
 
-    // Exerice : traduire users et users-details avec le pipe async
+    // Exercice : traduire users et users-details avec le pipe async
 
     // this.subscription = now$.subscribe((now) => {
     //   this.now = now;

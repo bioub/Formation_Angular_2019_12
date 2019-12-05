@@ -9,7 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
 import { UserService } from './users/user.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './shared/loader/loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,13 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule, // toujours en dernier (car route not-found)
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+    transform-origin: center center;
+  }
+  100% {
+    transform: rotate(360deg);
+    transform-origin: center center;
+  }
+}
+
+:host {
+  animation-name: rotate;
+  animation-duration: 400ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}

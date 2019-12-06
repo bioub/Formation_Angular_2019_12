@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClockComponent } from './clock/clock.component';
 import { LoaderComponent } from './loader/loader.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,11 @@ import { LoaderComponent } from './loader/loader.component';
   ],
   exports: [
     ClockComponent,
-    LoaderComponent
+    LoaderComponent,
+
+    // en important SharedModule on importera aussi :
+    CommonModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }

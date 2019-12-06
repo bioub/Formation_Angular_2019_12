@@ -6,9 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './core/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 import { SharedModule } from './shared/shared.module';
-import { UsersModule } from './users/users.module';
+// import { UsersModule } from './users/users.module';
 import { TopBarComponent } from './core/top-bar/top-bar.component';
-import { UserService } from './users/user.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './shared/loader/loader.interceptor';
 
@@ -25,7 +24,7 @@ import { LoaderInterceptor } from './shared/loader/loader.interceptor';
   imports: [
     HttpClientModule,
     BrowserModule,
-    UsersModule,
+    // UsersModule,
     SharedModule,
     AppRoutingModule, // toujours en dernier (car route not-found)
 

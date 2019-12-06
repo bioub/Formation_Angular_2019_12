@@ -16,7 +16,7 @@ Importer UserModule depuis AppModule pour activer les routes
 */
 const routes: Routes = [
   {
-    path: "users",
+    path: "",
     component: UsersComponent,
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],

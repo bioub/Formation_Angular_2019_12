@@ -1,1 +1,3 @@
-<p>user-add works!</p>
+<app-user-form (save)="createUser($event)" #userForm="userForm"></app-user-form>
+
+{{userForm.user.name}}

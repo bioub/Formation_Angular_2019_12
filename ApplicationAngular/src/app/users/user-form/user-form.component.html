@@ -1,0 +1,48 @@
+<form (submit)="form.valid && onSubmit()" #form="ngForm">
+  <p>
+    Nom :
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="user.name"
+      required
+      #input
+      #name="ngModel"
+    />
+    {{input.type}}
+    {{input.name}}
+    {{input.value}}
+    <!-- [()] BANANA IN A BOX -->
+    <span *ngIf="name.invalid && (name.touched || form.submitted)">
+      Le nom est obligatoire
+    </span>
+  </p>
+  <p>
+    Email :
+    <input
+      type="email"
+      name="email"
+      [ngModel]="user.email"
+      (ngModelChange)="user.email = $event"
+      email
+    />
+  </p>
+  <p>
+    Téléphone :
+    <input
+      type="tel"
+      name="phone"
+      [ngModel]="user.phone"
+      (ngModelChange)="user.phone = $event"
+    />
+  </p>
+  <p>
+    <button>Enregistrer</button>
+  </p>
+</form>
+<!--
+    const formElt = document.querySelector('form');
+    formElt.addEventListener('submit', (event) => {
+        event.preventDefault();
+    })
+-->

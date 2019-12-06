@@ -34,7 +34,7 @@ export class ClockComponent implements OnInit {
     // d----d----d|
     this.now$ = interval(1000).pipe(
       map(() => new Date()),
-      take(10),
+      // take(10),
     );
 
     // Exercice : traduire users et users-details avec le pipe async

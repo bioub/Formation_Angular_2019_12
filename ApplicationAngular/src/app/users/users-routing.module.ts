@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { UsersComponent } from "./users/users.component";
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { UserAddComponent } from "./user-add/user-add.component";
+import { AuthGuard } from '../core/auth.guard';
 
 /*
 Exercice :
@@ -17,14 +18,16 @@ const routes: Routes = [
   {
     path: "users",
     component: UsersComponent,
+    canActivate: [AuthGuard],
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: "add",
-        component: UserAddComponent
+        component: UserAddComponent,
       },
       {
         path: ":id",
-        component: UserDetailsComponent
+        component: UserDetailsComponent,
       }
     ]
   }

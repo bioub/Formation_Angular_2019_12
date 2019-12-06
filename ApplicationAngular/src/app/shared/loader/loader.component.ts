@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from './loader.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-loader',
@@ -8,14 +9,12 @@ import { LoaderService } from './loader.service';
 })
 export class LoaderComponent implements OnInit {
 
-  show = false;
+  show$: Observable<Boolean>;
 
   constructor(private loaderService: LoaderService) { }
 
   ngOnInit() {
-    this.loaderService.request.subscribe((count) => {
-      this.show = Boolean(count);
-    })
+    this.show$ = this.loaderService.show$;
   }
 
 }

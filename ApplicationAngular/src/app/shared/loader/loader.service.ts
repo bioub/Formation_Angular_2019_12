@@ -5,17 +5,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoaderService {
-  request = new EventEmitter<number>();
+  show$ = new EventEmitter<boolean>();
 
   private _requestCount = 0;
 
   begin() {
     this._requestCount++;
-    this.request.emit(this._requestCount);
+    this.show$.emit(Boolean(this._requestCount));
   }
 
   end() {
     this._requestCount--;
-    this.request.emit(this._requestCount);
+    this.show$.emit(Boolean(this._requestCount));
   }
 }

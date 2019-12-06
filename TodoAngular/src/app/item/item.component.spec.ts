@@ -16,6 +16,7 @@ describe('ItemComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ItemComponent);
     component = fixture.componentInstance;
+    component.todo = {title: 'ABC', completed: false};
     fixture.detectChanges();
   });
 

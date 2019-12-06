@@ -4,6 +4,7 @@ import { UsersComponent } from "./users/users.component";
 import { UserDetailsComponent } from "./user-details/user-details.component";
 import { UserAddComponent } from "./user-add/user-add.component";
 import { AuthGuard } from '../core/auth.guard';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 /*
 Exercice :
@@ -24,6 +25,10 @@ const routes: Routes = [
       {
         path: "add",
         component: UserAddComponent,
+      },
+      {
+        path: ":id/update",
+        component: UserUpdateComponent,
       },
       {
         path: ":id",

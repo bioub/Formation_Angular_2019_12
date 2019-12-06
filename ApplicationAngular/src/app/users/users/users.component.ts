@@ -1,7 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { UserService } from "../user.service";
 import { User } from "../user.model";
-import { Observable } from "rxjs";
+import { Observable, combineLatest } from "rxjs";
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: "app-users",
@@ -14,6 +15,16 @@ export class UsersComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    this.users$ = this.userService.getAll();
+    this.users$ = combineLatest(
+      this.userService.getAll(),
+      this.userService.events.add.pipe(startWith(null))
+    ).pipe(
+      map(([users, newUser]) => {
+        if (newUser) {
+          return [...users, newUser];
+        }
+        return users;
+      })
+    );
   }
 }

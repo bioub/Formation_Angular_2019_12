@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Todo } from './todo.model';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class TodoService {
   constructor(private httpClient: HttpClient) { }
 
   getAll() {
-    return this.httpClient.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
+    return this.httpClient.get<Todo[]>(environment.backendUrl + '/todos');
     // REQUETE HTTP :
     // GET /todos HTTP/1.1
     // Host: jsonplaceholder.typicode.com

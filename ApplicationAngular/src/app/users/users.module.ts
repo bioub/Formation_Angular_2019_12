@@ -8,6 +8,7 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { SharedModule } from '../shared/shared.module';
 import { UserFormComponent } from './user-form/user-form.component';
+import { UserUpdateComponent } from './user-update/user-update.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { UserFormComponent } from './user-form/user-form.component';
     UsersComponent,
     UserDetailsComponent,
     UserAddComponent,
+    UserUpdateComponent,
     UserFormComponent,
   ],
   imports: [
